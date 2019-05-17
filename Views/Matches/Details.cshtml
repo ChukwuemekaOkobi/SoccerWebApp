@@ -1,0 +1,44 @@
+﻿@model SoccerWebApp.Models.Match
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Match</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MatchName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MatchName)
+        </dd>
+    </dl>
+    <hr/>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Date</td>
+                <td>Tipster</td>
+                <td>Match Outcome</td>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach(var item in Model.predictions)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelitem =>item.predictionDate)</td>
+                <td>@Html.DisplayFor(modelitem =>item.Tipster.Name)</td>
+                <td>@Html.DisplayFor(modelitem =>item.matchOutcome)</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MatchID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

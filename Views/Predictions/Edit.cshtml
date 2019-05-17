@@ -1,0 +1,49 @@
+﻿@model SoccerWebApp.Models.Prediction
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Prediction</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PredictionID" />
+            <div class="form-group">
+                <label asp-for="TipsterID" class="control-label"></label>
+                <select asp-for="TipsterID" class="form-control" asp-items="ViewBag.TipsterID"></select>
+                <span asp-validation-for="TipsterID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MatchID" class="control-label"></label>
+                <select asp-for="MatchID" class="form-control" asp-items="ViewBag.MatchID"></select>
+                <span asp-validation-for="MatchID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="predictionDate" class="control-label"></label>
+                <input asp-for="predictionDate" class="form-control" />
+                <span asp-validation-for="predictionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="matchOutcome" class="control-label"></label>
+                <select asp-for="matchOutcome" class="form-control" asp-items="ViewBag.matchOutcome"></select>
+                <span asp-validation-for="matchOutcome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

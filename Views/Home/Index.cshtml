@@ -1,0 +1,102 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model MatchViewModel
+
+
+<section class="container-fluid">
+    <h2>Predictions</h2>
+
+    <article>
+        <h4>Matches</h4>
+        <a asp-area="Admin" asp-controller="Home" asp-action="Inde">To to Admin Page</a>
+        <form asp-controller="Home" asp-action="Index" method="get">
+            <input type="submit" class="btn" value="All Matches" />
+                @foreach (var item in Model.matches)
+                {
+                    <button class="btn btn-default" name="matchstring" value="@item.Text" >@item.Text</button>
+                    
+                }
+        </form>
+    </article>
+
+    <article>
+        <h4>   Match Predictions for <span>@ViewData["stringname"]</span> </h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Prediction Date
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Phone Number
+                    </th>
+                    <th>
+                        Match
+                    </th>
+
+                    <th>
+                        Match Outcome
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.paging)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.predictionDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tipster.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tipster.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tipster.PhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Match.MatchName)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.matchOutcome)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @{
+            var prevDisabled = !Model.paging.HasPreviousPage ? "disabled" : "";
+            var nextDisabled = !Model.paging.HasNextPage ? "disabled" : "";
+        }
+        <p>Page @Model.paging.PageIndex of @Model.paging.TotalPages</p>
+        <a asp-action="Index"
+           asp-route-page="@(Model.paging.PageIndex - 1)" asp-route-matchstring="@Model.matchname"
+           class="btn btn-default @prevDisabled">
+            <
+        </a>
+        @for (var i = 1; i <= Model.paging.TotalPages; i++)
+        {
+            if (Model.paging.PageIndex == i) { 
+                <a asp-action="Index" asp-route-page="@(i)" asp-route-matchstring="@Model.matchname" class="btn btn-primary">@(i)</a>}
+            else { 
+                <a asp-action="Index" asp-route-page="@(i)" asp-route-matchstring="@Model.matchname" class="btn btn-default">@(i)</a>
+            }
+        }
+        <a asp-action="Index"
+           asp-route-page="@(Model.paging.PageIndex + 1)" asp-route-matchstring="@Model.matchname"
+           class="btn btn-default @nextDisabled">
+            >
+        </a>
+
+    </article>
+</section>

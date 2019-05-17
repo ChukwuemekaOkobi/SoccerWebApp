@@ -1,0 +1,11 @@
+C:\Users\Chukwuemeka OKOBI\Documents\VS 2017\Projects\SoccerWebApp\SoccerWebApp\bin\Debug\netcoreapp2.1\SoccerWebApp.deps.json
+C:\Users\Chukwuemeka OKOBI\Documents\VS 2017\Projects\SoccerWebApp\SoccerWebApp\bin\Debug\netcoreapp2.1\SoccerWebApp.runtimeconfig.json
+C:\Users\Chukwuemeka OKOBI\Documents\VS 2017\Projects\SoccerWebApp\SoccerWebApp\bin\Debug\netcoreapp2.1\SoccerWebApp.runtimeconfig.dev.json
+C:\Users\Chukwuemeka OKOBI\Documents\VS 2017\Projects\SoccerWebApp\SoccerWebApp\bin\Debug\netcoreapp2.1\SoccerWebApp.dll
+C:\Users\Chukwuemeka OKOBI\Documents\VS 2017\Projects\SoccerWebApp\SoccerWebApp\bin\Debug\netcoreapp2.1\SoccerWebApp.pdb
+C:\Users\Chukwuemeka OKOBI\Documents\VS 2017\Projects\SoccerWebApp\SoccerWebApp\obj\Debug\netcoreapp2.1\SoccerWebApp.csprojAssemblyReference.cache
+C:\Users\Chukwuemeka OKOBI\Documents\VS 2017\Projects\SoccerWebApp\SoccerWebApp\obj\Debug\netcoreapp2.1\SoccerWebApp.csproj.CoreCompileInputs.cache
+C:\Users\Chukwuemeka OKOBI\Documents\VS 2017\Projects\SoccerWebApp\SoccerWebApp\obj\Debug\netcoreapp2.1\SoccerWebApp.AssemblyInfoInputs.cache
+C:\Users\Chukwuemeka OKOBI\Documents\VS 2017\Projects\SoccerWebApp\SoccerWebApp\obj\Debug\netcoreapp2.1\SoccerWebApp.AssemblyInfo.cs
+C:\Users\Chukwuemeka OKOBI\Documents\VS 2017\Projects\SoccerWebApp\SoccerWebApp\obj\Debug\netcoreapp2.1\SoccerWebApp.dll
+C:\Users\Chukwuemeka OKOBI\Documents\VS 2017\Projects\SoccerWebApp\SoccerWebApp\obj\Debug\netcoreapp2.1\SoccerWebApp.pdb

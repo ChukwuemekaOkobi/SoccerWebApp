@@ -1,0 +1,57 @@
+﻿@model SoccerWebApp.Models.Tipster
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tipster</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model =>model.PhoneNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model=> model.PhoneNumber)
+        </dd>
+    </dl> <hr />
+    <h4>@Html.DisplayNameFor(model => model.Predictions)</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Match</th>
+                <th>Prediction</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model.Predictions)
+            {
+              <tr>
+                  <td>@item.predictionDate</td>
+                  <td>@item.Match.MatchName</td>
+                  <td>@item.matchOutcome</td>
+              </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.TipsterId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
